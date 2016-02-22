@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}SMART VIRTUAL LAB{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>SMART VIRTUAL LAB</h1>
+    <h2>Hello, {% if name %}{{ name }}. You account has been create. You can use SMART VIRTUAL LAB service with your account.
+    {% else %}Stranger! You need register an account to use SMART VIRTUAL LAB service.{% endif %} </h2>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
