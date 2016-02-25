@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from flask.ext.script import Manager
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
@@ -30,6 +30,16 @@ def page_not_found(e):
 def internal_server_error(e):
     return render_template('500.html'), 500
 
+@app.route('/howtouse')
+def use():
+    #response = make_response('<h1>This document carries a cookie!</h1>')
+    return render_template('HowToUse.html')
+
+#@app.route('/iOSAnyConnect.pdf')
+#def iospdf():
+    #return render_template('iOSAnyConnect.pdf')
+    #return url_for('iOSAnyConnect.pdf')
+    #return url_for('static', filename='iOSAnyConnect.pdf')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
